@@ -142,9 +142,6 @@ tr:nth-child(even) td {
 }
 
 /* ---------- Page sections ---------- */
-.center {
-	text-align: center;
-}
 header h2 {
 	padding-bottom: .2em;
 	border-bottom: 3px solid #39ff88;
@@ -216,9 +213,6 @@ footer {
 	font-size: .8em;
 	line-height: 4em;
 	margin-top: 1em;
-}
-blockquote {
-	font-style: italic;
 }
 .flowRight {
 	float: right;

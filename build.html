@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>FPV Drones | Building a Quad</title>
-    <!-- integrity: verifies the CDN font file matches this SHA-384 hash
-         (see the full explanation in index.html) -->
+    <!-- integrity: verifies the CDN font file matches this SHA-384 hash. Full explinaition on index.html -->
     <link
       href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
       rel="stylesheet"
@@ -49,16 +48,16 @@
         <section>
           <h3>The parts</h3>
           <!--
-            MDN ELEMENT #1: <wbr> (Word Break Opportunity)
+            MDN ELEMENT #1: <wbr> Word Break Opportunity
             What it is:  An empty element that marks a spot where the browser
-                         MAY break a line if it needs to. If there's enough
+                         may break a line if it needs to. If there's enough
                          room, no break happens and nothing is shown.
-            Where:       In the "Typical choice" column of this table (ESC and
-                         VTX rows), and in the Resources links at the bottom of
+            Where:       In the "Typical choice" column of this table ESC and
+                         VTX rows, and in the Resources links at the bottom of
                          this page.
-            How I use it: Strings like "DJI/Walksnail/HDZero" have no spaces,
-                         so the browser treats them as one giant word and can't
-                         wrap them. I put <wbr> after each slash so the text can
+            How I use it: Sentences like "DJI/Walksnail/HDZero" have no spaces,
+                         so it for some reason treats them as one giant word and can't
+                         wrap them. So I need to put <wbr> after each slash so the text can
                          wrap there instead of overflowing the table cell.
           -->
           <table>
@@ -118,7 +117,7 @@
         <section>
           <h3>The math</h3>
           <!--
-            MDN ELEMENT #2: <var> (Variable)
+            MDN ELEMENT #2: <var> Variable
             What it is:  Marks the name of a variable in a math expression or
                          in programming. Browsers show it in italics by default.
             Where:       In each of the three formulas in this section, and in
@@ -126,7 +125,7 @@
             How I use it: Each letter in a drone formula (KV, V, C, I, T, W) is
                          wrapped in <var> so it's clear it stands for a value
                          you plug in. In styles.css I also made <var> bold and
-                         brown so the variables stand out.
+                         brown so it stands out.
           -->
           <p>Motor speed:</p>
           <p class="formula">RPM = <var>KV</var> &times; <var>V</var></p>

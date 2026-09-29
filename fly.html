@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>FPV Drones | Learning to Fly</title>
-    <!-- integrity: verifies the CDN font file matches this SHA-384 hash
-         (see the full explanation in index.html) -->
+    <!-- integrity: verifies the CDN font file matches this SHA-384 hash. Full explanation in index.html-->
     <link
       href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
       rel="stylesheet"
@@ -74,12 +73,12 @@
         <section>
           <h3>OSD warnings</h3>
           <!--
-            MDN ELEMENT #3: <samp> (Sample Output)
+            MDN ELEMENT #3: <samp>
             What it is:  Marks text that is output from a computer program or
                          device. Browsers show it in a monospace font by
                          default.
-            Where:       1) In the paragraph right below (the battery voltage
-                            and flight timer readouts).
+            Where:       1) In the paragraph right below the battery voltage
+                            and flight timer readouts.
                          2) In the list of OSD warnings under it.
             How I use it: The OSD is text that the drone's flight controller
                          prints on top of your video feed, so it is program
@@ -144,19 +143,21 @@
             MDN ATTRIBUTE #3: writingsuggestions
             What it is:  A global attribute that turns the browser's built-in
                          writing suggestions on or off for an editable field.
-                         These are the gray "finish your sentence" suggestions
-                         some browsers (like Chrome) show as you type.
-                         Values: "true" or "false".
+                         These are the gray "finish your sentence" suggestions. But
+                         it has limited avalibility.
             Where:       1) On the <form> tag below, set to "false".
                          2) On the "Notes" <textarea>, set to "true".
             How I use it: Child elements inherit this setting from their
                          parent, so writingsuggestions="false" on the <form>
                          turns suggestions OFF for every field. That makes
                          sense for the quad name and flying spot, which are
-                         made-up nicknames the browser would only guess wrong.
-                         The Notes box then overrides it with "true", because
-                         notes are written in normal sentences, which is where
-                         suggestions actually help.
+                         random names, the browser would only guess wrong.
+                         The Notes box is "true", because notes are written 
+                         in normal sentences, which is where suggestions actually help.
+            What to use instead: Since it has limited availability, the best ways to get the same
+                          use are by uising spellcheck and autocorrect attributes. This is beacuse 
+                          these are the same features that are used in writing suggestions. Also both
+                          are universal attributes, so they will work in all browsers.
           -->
           <form action="#" writingsuggestions="false">
             <label for="quad">Quad name</label>

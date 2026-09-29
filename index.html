@@ -11,11 +11,12 @@
                    and only uses it if the hash matches. If the CDN is hacked
                    or the file is changed, the browser refuses to load it.
       Where:       On this <link> tag in the <head> of every page.
-      How I use it: I load the "Orbitron" font (used for the "FPV Drones" site
-                   name) from the jsDelivr CDN. The integrity hash makes sure I
+      How I use it: I load the "Orbitron" font from the jsDelivr CDN. The integrity hash makes sure I
                    get exactly the file I tested with. crossorigin="anonymous"
                    is required so the browser is allowed to check the hash of a
-                   file that comes from another domain.
+                   file that comes from another domain. Used the help of stackoverflow to 
+                   understand how to use it. And used AI to help troubleshoot the error I was getting.
+                   Turns out I was using the wrong hash.
     -->
     <link
       href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"

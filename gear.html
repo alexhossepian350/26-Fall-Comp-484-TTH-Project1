@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>FPV Drones | Starter Gear</title>
-    <!-- integrity: verifies the CDN font file matches this SHA-384 hash
-         (see the full explanation in index.html) -->
+    <!-- integrity: verifies the CDN font file matches this SHA-384 hash. Full explanation in index.html -->
     <link
       href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
       rel="stylesheet"
@@ -43,9 +42,7 @@
           What it is:  A global attribute from HTML "microdata". It labels a
                        piece of content as a specific property (like "name" or
                        "description") of an item. It works together with
-                       "itemscope" (which says "this element is one item") and
-                       "itemtype" (which says what kind of item it is, using a
-                       vocabulary from schema.org). Search engines like Google
+                       itemscope and itemtype. Search engines like Google
                        read it to understand what the page is about.
           Where:       On every gear <section> below. Each <section> has
                        itemscope + itemtype="https://schema.org/Product", and
@@ -53,9 +50,9 @@
           How I use it: Each piece of gear is marked as a Product. The <h3> is
                        itemprop="name", the <img> is itemprop="image", the brand
                        is itemprop="brand", the category is itemprop="category",
-                       and the paragraph is itemprop="description". Visitors
+                       and the paragraph is itemprop="description". People only
                        see a normal section, but a search engine sees
-                       structured product data.
+                       actual product data.
         -->
         <section class="gear-item" itemscope itemtype="https://schema.org/Product">
           <h3 itemprop="name">1. RadioMaster Pocket</h3>

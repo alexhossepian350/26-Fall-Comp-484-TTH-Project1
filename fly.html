@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FPV Drones | Learning to Fly</title>
+    <!-- integrity: verifies the CDN font file matches this SHA-384 hash
+         (see the full explanation in index.html) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
+      rel="stylesheet"
+      type="text/css"
+      integrity="sha384-HsS2+TrIBHQPE8E40wfPfRiycjxUNJHrrvf8UEwY9AyHzpTl66tRn8tvirBLRNUb"
+      crossorigin="anonymous"
+    />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>FPV Drones</h1>
+      <h2>Learning to Fly</h2>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html" title="What is FPV?">What is FPV?</a></li>
+          <li><a href="build.html" title="Building a quad">Building a quad</a></li>
+          <li><a href="fly.html" title="Learning to fly" class="current">Learning to fly</a></li>
+          <li><a href="gear.html" title="Starter gear">Starter gear</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <article role="article">
+        <header>
+          <p>
+            <img
+              src="images/boxgoggles.png"
+              alt="Drawing of FPV goggles"
+              width="250"
+              height="200"
+              class="flowRight"
+            />Learning to fly FPV takes time. Most pilots crash a lot at first,
+            and that&rsquo;s normal. The good news is that you can do almost
+            all of that crashing on your computer. This page covers the ways
+            most pilots take. I first started by practicing in a simulator, learned the flight modes,
+            set up the flight controller, and finally go through a safety
+            checklist before your first real flight.
+          </p>
+        </header>
+        <section>
+          <h3>Start in a simulator</h3>
+          <p>
+            Crashing in a sim is free. Crashing a real quad costs props, arms,
+            and sometimes a lot more. Plug your radio into your computer over
+            USB and put in at least 10&ndash;20 hours before your first real
+            flight. There are tons of YouTube videos out their that will help 
+            with learning the fundementsals. Some simulators include:
+          </p>
+          <dl>
+            <dt><b>Liftoff</b> (my favorite)</dt>
+            <dd>A classic on steam, with lots of maps and realistic physics.</dd>
+            <dt><b>Uncrashed</b></dt>
+            <dd>Beautiful freestyle spots, great for practicing smooth lines.</dd>
+            <dt><b>VelociDrone</b></dt>
+            <dd>The go-to sim for racing and online multiplayer.</dd>
+          </dl>
+        </section>
+        <section>
+          <h3>Flight modes</h3>
+          <ul>
+            <li><b>Angle mode</b>: The drone levels itself when you let go of the stick. Good for your very first minutes.</li>
+            <li><b>Horizon mode</b>: Self-levels near center stick, but lets you flip at full stick.</li>
+            <li><b>Acro mode</b>: Full manual, no self-leveling at all. The drone holds whatever angle you leave it at. Almost every FPV pilot flies acro, so aim to switch to it quickly.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>OSD warnings</h3>
+          <!--
+            MDN ELEMENT #3: <samp> (Sample Output)
+            What it is:  Marks text that is output from a computer program or
+                         device. Browsers show it in a monospace font by
+                         default.
+            Where:       1) In the paragraph right below (the battery voltage
+                            and flight timer readouts).
+                         2) In the list of OSD warnings under it.
+            How I use it: The OSD is text that the drone's flight controller
+                         prints on top of your video feed, so it is program
+                         output. I wrap each OSD readout and warning in <samp>.
+                         In styles.css, <samp class="osd"> is neon green on
+                         navy like a real OSD, and <samp class="warning"> is
+                         white on red.
+          -->
+          <p>
+            The OSD (on-screen display) is text the drone prints on top of your
+            video feed. It shows live numbers like your battery voltage
+            <samp class="osd">16.2V</samp> and flight timer
+            <samp class="osd">02:31</samp>, plus warnings when something needs
+            your attention. These are the warnings you&rsquo;ll want to
+            recognize instantly:
+          </p>
+          <dl>
+            <dt><samp class="warning">ARMED</samp></dt>
+            <dd>The motors are live. Stay clear of the props.</dd>
+            <dt><samp class="warning">LOW BATTERY</samp></dt>
+            <dd>Start heading back.</dd>
+            <dt><samp class="warning">LAND NOW</samp></dt>
+            <dd>The pack is almost empty. Land immediately.</dd>
+            <dt><samp class="warning">RXLOSS</samp></dt>
+            <dd>The drone lost your radio signal and failsafe is about to kick in.</dd>
+          </dl>
+        </section>
+        <section>
+          <h3>Pre-flight safety checklist</h3>
+          <aside role="complementary">
+            <h4>Know the rules</h4>
+            <p>
+              In the US, recreational pilots must pass the free FAA TRUST test,
+              register any drone over 250 g (and use Remote ID), stay under
+              400 ft, and have a visual observer watching the drone while
+              they&rsquo;re wearing goggles.
+            </p>
+          </aside>
+              <img
+              src="images/Trust.png"
+              alt="Trust Certificate"
+              width="500"
+              height="300"
+              class="flowRight"
+          />
+          <ol>
+            <li>Check the props for chips or cracks, and make sure they&rsquo;re tight.</li>
+            <li>Make sure the battery is fully charged and not puffy or damaged.</li>
+            <li>Turn on your radio <em>before</em> plugging in the drone battery.</li>
+            <li>Confirm you have video and that failsafe works before taking off.</li>
+            <li>Fly away from people, roads, and airports.</li>
+          </ol>
+        </section>
+        <section class="flight-log">
+          <h3>Keep a flight log</h3>
+          <p>
+            After each session, write down what you flew and how it went.
+            Looking back at your notes is a great way to see your progress and
+            remember what to work on next time.
+          </p>
+          <!--
+            MDN ATTRIBUTE #3: writingsuggestions
+            What it is:  A global attribute that turns the browser's built-in
+                         writing suggestions on or off for an editable field.
+                         These are the gray "finish your sentence" suggestions
+                         some browsers (like Chrome) show as you type.
+                         Values: "true" or "false".
+            Where:       1) On the <form> tag below, set to "false".
+                         2) On the "Notes" <textarea>, set to "true".
+            How I use it: Child elements inherit this setting from their
+                         parent, so writingsuggestions="false" on the <form>
+                         turns suggestions OFF for every field. That makes
+                         sense for the quad name and flying spot, which are
+                         made-up nicknames the browser would only guess wrong.
+                         The Notes box then overrides it with "true", because
+                         notes are written in normal sentences, which is where
+                         suggestions actually help.
+          -->
+          <form action="#" writingsuggestions="false">
+            <label for="quad">Quad name</label>
+            <input type="text" id="quad" name="quad" placeholder="e.g. Sk8Rat" />
+
+            <label for="spot">Flying spot</label>
+            <input type="text" id="spot" name="spot" placeholder="e.g. the old baseball field" />
+
+            <label for="notes">Notes</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="5"
+              writingsuggestions="true"
+              placeholder="How did the flight go? What do you want to practice next time?"
+            ></textarea>
+            <p class="hint">Writing suggestions are off for the first two boxes and on for Notes.</p>
+          </form>
+        </section>
+      </article>
+    </main>
+    <footer role="contentinfo">
+      <p>&copy; 2026 Alex Hossepian &middot; COMP 484 Project 1 &middot;</p>
+    </footer>
+  </body>
+</html>

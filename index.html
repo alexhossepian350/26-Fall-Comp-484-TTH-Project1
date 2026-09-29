@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FPV Drones</title>
+    <!--
+      MDN ATTRIBUTE #1: integrity
+      What it is:  The "integrity" attribute (Subresource Integrity) holds a
+                   cryptographic hash (here SHA-384) of a file loaded from
+                   another server. The browser downloads the file, hashes it,
+                   and only uses it if the hash matches. If the CDN is hacked
+                   or the file is changed, the browser refuses to load it.
+      Where:       On this <link> tag in the <head> of every page.
+      How I use it: I load the "Orbitron" font (used for the "FPV Drones" site
+                   name) from the jsDelivr CDN. The integrity hash makes sure I
+                   get exactly the file I tested with. crossorigin="anonymous"
+                   is required so the browser is allowed to check the hash of a
+                   file that comes from another domain.
+    -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
+      rel="stylesheet"
+      type="text/css"
+      integrity="sha384-HsS2+TrIBHQPE8E40wfPfRiycjxUNJHrrvf8UEwY9AyHzpTl66tRn8tvirBLRNUb"
+      crossorigin="anonymous"
+    />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>FPV Drones</h1>
+      <h2>What is FPV?</h2>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html" title="What is FPV?" class="current">What is FPV?</a></li>
+          <li><a href="build.html" title="Building a quad">Building a quad</a></li>
+          <li><a href="fly.html" title="Learning to fly">Learning to fly</a></li>
+          <li><a href="gear.html" title="Starter gear">Starter gear</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <article role="article">
+        <header>
+          <p>
+            <img
+              src="images/drone.svg"
+              alt="Top-down drawing of a quadcopter"
+              width="280"
+              height="280"
+              class="flowRight"
+            />FPV stands for <b>First Person View</b>. A small camera on the
+            front of the drone streams live video to a pair of goggles on the
+            pilot&rsquo;s face, so you see exactly what the drone sees and fly
+            it as if you were sitting in the cockpit. Unlike a camera drone
+            that hovers in place with GPS, most FPV drones are flown completely
+            by hand. There is no auto-leveling and no autopilot, just you,
+            the sticks, and a lot of practice. The result is a kind of flying
+            that feels closer to a video game or an extreme sport than to
+            taking photos.
+          </p>
+          <p>
+            FPV has grown from a small hobby of people soldering drones together
+            in their garages to a huge community of freestyle pilots, racers,
+            and filmmakers. Those sweeping, diving shots through buildings and
+            down waterfalls that you see in movies and car commercials? A lot of
+            them are filmed with FPV drones.
+          </p>
+        </header>
+        <section>
+          <h3>Styles of FPV</h3>
+          <dl>
+            <dt>Freestyle</dt>
+            <dd>
+              Flips, rolls, and dives around trees, buildings, and abandoned
+              spots. It&rsquo;s all about smooth, creative lines, kind of like
+              skateboarding in the air. Usually flown on a 5-inch quad.
+            </dd>
+            <dt>Racing</dt>
+            <dd>
+              Light, powerful quads flown through gates and flags on a tight
+              course. Races are often won by tenths of a second.
+            </dd>
+            <dt>Cinematic</dt>
+            <dd>
+              Small ducted drones called <b>cinewhoops</b> carry an action
+              camera for smooth, close-up video indoors and around people.
+            </dd>
+            <dt>Long range</dt>
+            <dd>
+              Larger, efficient 7-inch quads built to cruise over mountains and
+              coastlines for several kilometers on a single battery.
+            </dd>
+          </dl>
+        </section>
+        <section>
+          <h3>How it works</h3>
+          <p>
+            An FPV drone has two separate radio links: <b>video</b> coming down
+            from the drone to your goggles, and <b>control</b> going up from
+            your radio to the drone.
+          </p>
+          <ol>
+            <li>The <b>camera</b> captures video and sends it to the <b>video transmitter (VTX)</b>.</li>
+            <li>The VTX broadcasts the video on 5.8 GHz to your <b>goggles</b>.</li>
+            <li>You move the sticks on your <b>radio controller</b>, which sends commands to the drone&rsquo;s <b>receiver</b>.</li>
+            <li>The receiver passes them to the <b>flight controller</b>, the drone&rsquo;s brain.</li>
+            <li>The flight controller tells the <b>ESC</b> how fast to spin each of the four <b>motors</b>.</li>
+          </ol>
+          <aside role="complementary">
+            <h4>Where to start</h4>
+            <p>
+              New to FPV? Read about <a href="gear.html" title="Starter gear">starter gear</a>
+              first, then spend some time in a simulator before you ever fly a
+              real drone.
+            </p>
+          </aside>
+        </section>
+      </article>
+    </main>
+    <footer role="contentinfo">
+      <p>&copy; 2026 Alex Hossepian &middot; COMP 484 Project 1 &middot;</p>
+    </footer>
+  </body>
+</html>

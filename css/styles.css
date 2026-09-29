@@ -1,0 +1,228 @@
+/* FPV Drones - main stylesheet (used by every page)
+   Colors: navy #0b1d3a (primary), neon green #39ff88 (secondary) */
+
+html, body {
+	background: #0b1d3a; /* navy */
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #13294b;
+}
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 2.5% 2.5% 0;
+	background: white;
+	line-height: 1.8;
+}
+/* Site name. Orbitron is loaded from a CDN in each page's <head>
+   (see the integrity attribute there). Falls back to Verdana. */
+h1 {
+	font: 1.6em "Orbitron", Verdana, Geneva, sans-serif;
+	margin-bottom: .4em;
+	color: #0b1d3a;
+	letter-spacing: 2px;
+}
+h2 {
+	font: 3.2em Georgia, "Times New Roman", Times, serif;
+	margin-bottom: .2em;
+}
+h3 {
+	font-size: 1.2em;
+	margin-top: 1em;
+}
+p {
+	margin-bottom: 1em;
+}
+a {
+	color: #1a4b9c;
+}
+/* Neon highlight behind a link when you hover over it */
+a:hover {
+	color: #0b1d3a;
+	background: #39ff88;
+}
+
+/* ---------- Navigation ---------- */
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: .5em 0 1em;
+}
+nav li {
+	display: inline;
+	margin-right: 1.2em;
+}
+/* Marks the page you are currently on */
+nav a.current {
+	color: #0b1d3a;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 3px solid #39ff88;
+}
+
+/* ---------- OSD text (fly page) ---------- */
+/* <samp> = output from a computer program. OSD readouts are
+   neon green on navy, like the text in FPV goggles. */
+samp {
+	font-family: Consolas, "Courier New", monospace;
+}
+samp.osd {
+	color: #39ff88;
+	background: #0b1d3a;
+	padding: 0 .4em;
+}
+/* OSD warnings (also <samp>) look like the red text in FPV goggles */
+samp.warning {
+	color: white;
+	background: #b3261e;
+	padding: 0 .4em;
+	font-weight: bold;
+}
+
+/* ---------- Formulas (build page) ---------- */
+.formula {
+	font: 1.4em Georgia, "Times New Roman", Times, serif;
+	padding: .3em 1em;
+	border-left: 1em solid #39ff88;
+	background: #eef2fa;
+	color: #0b1d3a;
+	width: 80%;
+}
+/* <var> = a variable in a formula. Shown in bold italic green
+   (a darker green than the neon so it is readable on white). */
+var {
+	font-style: italic;
+	font-weight: bold;
+	color: #0a8f3f;
+}
+
+/* ---------- Lists ---------- */
+dt {
+	font-style: italic;
+	font-size: 1.2em;
+}
+dd {
+	margin-bottom: 1.4em;
+}
+
+/* ---------- Tables ---------- */
+table {
+	margin-top: 1em;
+	border-collapse: collapse;
+	width: 100%;
+}
+caption {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 1em;
+	text-align: left;
+}
+td, th {
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: left;
+	vertical-align: top;
+}
+th {
+	background: #0b1d3a;
+	color: #39ff88;
+}
+tr:nth-child(even) td {
+	background: #eef2fa;
+}
+
+/* ---------- Page sections ---------- */
+.center {
+	text-align: center;
+}
+header h2 {
+	padding-bottom: .2em;
+	border-bottom: 3px solid #39ff88;
+}
+aside {
+	padding: 1em;
+	background: #0b1d3a;
+	border-left: 1em solid #39ff88;
+	color: white;
+	margin-bottom: 1em;
+}
+aside h4, aside a {
+	color: #39ff88;
+}
+/* Gear items: each one clears the floated image above it */
+.gear-item {
+	clear: both;
+	overflow: auto;
+	padding-top: .5em;
+	border-top: 1px dotted #ccc;
+}
+/* Flight video next to the "Tips before you buy" list */
+.video-box {
+	text-align: center;
+}
+.video-box video {
+	display: block;
+	border-left: 1em solid #39ff88;
+	background: black;
+}
+.brand {
+	color: gray;
+	font-size: .9em;
+}
+
+/* ---------- Flight log form (fly page) ---------- */
+.flight-log {
+	clear: both;
+}
+form {
+	width: 60%;
+}
+label {
+	display: block;
+	margin-top: 1em;
+	font-weight: bold;
+}
+input, textarea {
+	width: 100%;
+	padding: .4em;
+	font: 1em Verdana, Geneva, sans-serif;
+	border: 1px solid gray;
+	box-sizing: border-box;
+}
+input:focus, textarea:focus {
+	outline: 2px solid #39ff88;
+	border-color: #0b1d3a;
+}
+.hint {
+	font-size: .8em;
+	color: gray;
+	margin: .2em 0 1em;
+}
+
+footer {
+	clear: both;
+	border-top: 3px solid #0b1d3a;
+	text-align: center;
+	font-size: .8em;
+	line-height: 4em;
+	margin-top: 1em;
+}
+blockquote {
+	font-style: italic;
+}
+.flowRight {
+	float: right;
+	margin-left: 10px;
+}
+.flowLeft {
+	float: left;
+	margin-right: 10px;
+}

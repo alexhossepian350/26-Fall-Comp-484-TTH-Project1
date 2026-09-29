@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FPV Drones | Starter Gear</title>
+    <!-- integrity: verifies the CDN font file matches this SHA-384 hash
+         (see the full explanation in index.html) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
+      rel="stylesheet"
+      type="text/css"
+      integrity="sha384-HsS2+TrIBHQPE8E40wfPfRiycjxUNJHrrvf8UEwY9AyHzpTl66tRn8tvirBLRNUb"
+      crossorigin="anonymous"
+    />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>FPV Drones</h1>
+      <h2>Starter Gear</h2>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html" title="What is FPV?">What is FPV?</a></li>
+          <li><a href="build.html" title="Building a quad">Building a quad</a></li>
+          <li><a href="fly.html" title="Learning to fly">Learning to fly</a></li>
+          <li><a href="gear.html" title="Starter gear" class="current">Starter gear</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <article role="article">
+        <header>
+          <p>
+            Getting into FPV can be expensive, and it&rsquo;s easy to buy the
+            wrong thing. Here is what I&rsquo;d recommend to someone just
+            starting out, listed in roughly the order you should buy it. The
+            idea is to start small and cheap, learn to fly, and only then move
+            up to a full-size quad.
+          </p>
+        </header>
+        <!--
+          MDN ATTRIBUTE #2: itemprop
+          What it is:  A global attribute from HTML "microdata". It labels a
+                       piece of content as a specific property (like "name" or
+                       "description") of an item. It works together with
+                       "itemscope" (which says "this element is one item") and
+                       "itemtype" (which says what kind of item it is, using a
+                       vocabulary from schema.org). Search engines like Google
+                       read it to understand what the page is about.
+          Where:       On every gear <section> below. Each <section> has
+                       itemscope + itemtype="https://schema.org/Product", and
+                       the elements inside it use itemprop.
+          How I use it: Each piece of gear is marked as a Product. The <h3> is
+                       itemprop="name", the <img> is itemprop="image", the brand
+                       is itemprop="brand", the category is itemprop="category",
+                       and the paragraph is itemprop="description". Visitors
+                       see a normal section, but a search engine sees
+                       structured product data.
+        -->
+        <section class="gear-item" itemscope itemtype="https://schema.org/Product">
+          <h3 itemprop="name">1. RadioMaster Pocket</h3>
+          <p class="brand">
+            Brand: <span itemprop="brand">RadioMaster</span> &middot;
+            Category: <span itemprop="category">Radio controller</span>
+          </p>
+          <p>
+            <img
+              src="images/radiomaster.png"
+              alt="Drawing of a radio controller"
+              width="200"
+              height="200"
+              class="flowRight"
+              itemprop="image"
+            /><span itemprop="description">A compact ExpressLRS radio that
+            runs EdgeTX. Buy this first: it works as a USB controller for every
+            simulator, and it&rsquo;s the one piece of gear you&rsquo;ll keep
+            using for years, no matter which drones you end up flying.</span>
+          </p>
+        </section>
+        <section class="gear-item" itemscope itemtype="https://schema.org/Product">
+          <h3 itemprop="name">2. Liftoff simulator</h3>
+          <p class="brand">
+            Category: <span itemprop="category">Simulator</span>
+          </p>
+          <p>
+            <img
+              src="images/liftoff.png"
+              alt="Drawing of a monitor showing a drone simulator"
+              width="300"
+              height="200"
+              class="flowLeft"
+              itemprop="image"
+            /><span itemprop="description">A drone simulator on Steam. Plug
+            your radio in over USB and practice here first. A sim costs less
+            than one set of replacement parts, and you can crash as many times
+            as you want.</span>
+          </p>
+        </section>
+        <section class="gear-item" itemscope itemtype="https://schema.org/Product">
+          <h3 itemprop="name">3. BETAFPV Meteor75 Pro</h3>
+          <p class="brand">
+            Brand: <span itemprop="brand">BETAFPV</span> &middot;
+            Category: <span itemprop="category">Tiny whoop</span>
+          </p>
+          <p>
+            <img
+              src="images/whoop.png"
+              alt="Drawing of a tiny whoop drone with prop guards"
+              width="180"
+              height="180"
+              class="flowRight"
+              itemprop="image"
+            /><span itemprop="description">A tiny drone with prop guards that
+            you can fly indoors. It bounces off walls and furniture instead of
+            breaking, which makes it perfect for your first real flights.</span>
+          </p>
+        </section>
+        <section class="gear-item" itemscope itemtype="https://schema.org/Product">
+          <h3 itemprop="name">4. Analog box goggles</h3>
+          <p class="brand">
+            Category: <span itemprop="category">Goggles</span>
+          </p>
+          <p>
+            <img
+              src="images/boxgoggles.png"
+              alt="Drawing of FPV goggles"
+              width="250"
+              height="200"
+              class="flowLeft"
+              itemprop="image"
+            /><span itemprop="description">Cheap goggles with a single big
+            screen inside. They&rsquo;re a good way to start with analog video
+            before spending a lot of money on a digital system.</span>
+          </p>
+        </section>
+        <section class="gear-item" itemscope itemtype="https://schema.org/Product">
+          <h3 itemprop="name">5. 1S LiPo batteries and charger</h3>
+          <p class="brand">
+            Category: <span itemprop="category">Power</span>
+          </p>
+          <p>
+            <img
+              src="images/lipo.png"
+              alt="Drawing of a LiPo battery"
+              width="200"
+              height="150"
+              class="flowRight"
+              itemprop="image"
+            /><span itemprop="description">Tiny whoops only fly for about
+            3&ndash;4 minutes per pack, so get at least six batteries and a
+            charger that can charge several at once.</span>
+          </p>
+        </section>
+        <section class="gear-item" itemscope itemtype="https://schema.org/Product">
+          <h3 itemprop="name">6. 5-inch freestyle quad</h3>
+          <p class="brand">
+            Category: <span itemprop="category">Drone</span>
+          </p>
+          <p>
+            <img
+              src="images/5inchquad.png"
+              alt="Top-down drawing of a quadcopter"
+              width="250"
+              height="180"
+              class="flowLeft"
+              itemprop="image"
+            /><span itemprop="description">Once you&rsquo;re comfortable in
+            acro mode, build or buy a 5-inch quad for flying outdoors.</span>
+            See <a href="build.html" title="Building a quad">Building a quad</a>
+            for the parts that go into one.
+          </p>
+        </section>
+        <section class="gear-item">
+          <div class="video-box flowRight">
+            <video width="480" height="270" controls muted preload="metadata">
+              <source src="videos/DJIG0027.mp4" type="video/mp4" />
+            </video>
+            <p class="brand">Just wait for the crash...</p>
+          </div>
+          <h3>Tips before you buy</h3>
+          <ul>
+            <li>Pick <b>one radio link</b> (ExpressLRS is the most popular) and buy receivers that match it.</li>
+            <li>Pick <b>one video system</b>. Analog, DJI, Walksnail, and HDZero don&rsquo;t work with each other.</li>
+            <li>Budget for spare props. You <b>will</b> break a lot of them.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer role="contentinfo">
+      <p>&copy; 2026 Alex Hossepian &middot; COMP 484 Project 1 &middot;</p>
+    </footer>
+  </body>
+</html>

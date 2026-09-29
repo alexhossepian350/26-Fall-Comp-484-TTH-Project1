@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FPV Drones | Building a Quad</title>
+    <!-- integrity: verifies the CDN font file matches this SHA-384 hash
+         (see the full explanation in index.html) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
+      rel="stylesheet"
+      type="text/css"
+      integrity="sha384-HsS2+TrIBHQPE8E40wfPfRiycjxUNJHrrvf8UEwY9AyHzpTl66tRn8tvirBLRNUb"
+      crossorigin="anonymous"
+    />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>FPV Drones</h1>
+      <h2>Building a Quad</h2>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html" title="What is FPV?">What is FPV?</a></li>
+          <li><a href="build.html" title="Building a quad" class="current">Building a quad</a></li>
+          <li><a href="fly.html" title="Learning to fly">Learning to fly</a></li>
+          <li><a href="gear.html" title="Starter gear">Starter gear</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <article role="article">
+        <header>
+          <p>
+            <img
+              src="images/drone.svg"
+              alt="Top-down drawing of a quadcopter"
+              width="200"
+              height="200"
+              class="flowRight"
+            />Most experienced FPV pilots build their own drones. Building
+            yourself means you know every part, you can fix it at the field
+            when something breaks (and something <em>will</em> break), and you
+            can tune it exactly the way you like. This page walks through the
+            parts that make up a typical <b>5-inch freestyle quad</b>, a little
+            of the math behind how they work together, and the order you put
+            them together in.
+          </p>
+        </header>
+        <section>
+          <h3>The parts</h3>
+          <!--
+            MDN ELEMENT #1: <wbr> (Word Break Opportunity)
+            What it is:  An empty element that marks a spot where the browser
+                         MAY break a line if it needs to. If there's enough
+                         room, no break happens and nothing is shown.
+            Where:       In the "Typical choice" column of this table (ESC and
+                         VTX rows), and in the Resources links at the bottom of
+                         this page.
+            How I use it: Strings like "DJI/Walksnail/HDZero" have no spaces,
+                         so the browser treats them as one giant word and can't
+                         wrap them. I put <wbr> after each slash so the text can
+                         wrap there instead of overflowing the table cell.
+          -->
+          <table>
+            <caption>Parts list for a 5-inch freestyle quad</caption>
+            <tr>
+              <th>Part</th>
+              <th>What it does</th>
+              <th>Typical choice</th>
+            </tr>
+            <tr>
+              <td>Frame</td>
+              <td>The carbon fiber skeleton that holds everything together and survives crashes.</td>
+              <td>5-inch &ldquo;True X&rdquo; carbon frame</td>
+            </tr>
+            <tr>
+              <td>Motors (x4)</td>
+              <td>Brushless motors that spin the props. Size is stator width + height (e.g. 2207).</td>
+              <td>2207 size, 1950KV for 6S</td>
+            </tr>
+            <tr>
+              <td>Flight controller (FC)</td>
+              <td>The brain. Reads the gyro thousands of times per second and tells the motors what to do.</td>
+              <td>F7 processor running Betaflight</td>
+            </tr>
+            <tr>
+              <td>Electronic speed controller (ESC)</td>
+              <td>Takes commands from the FC and delivers power to each motor. Usually one &ldquo;4-in-1&rdquo; board.</td>
+              <td>4-in-1, 55A, BLHeli_32/<wbr />AM32/<wbr />Bluejay firmware</td>
+            </tr>
+            <tr>
+              <td>Video transmitter (VTX)</td>
+              <td>Sends the camera feed to your goggles over 5.8 GHz.</td>
+              <td>Digital (DJI/<wbr />Walksnail/<wbr />HDZero) or analog</td>
+            </tr>
+            <tr>
+              <td>Receiver (RX)</td>
+              <td>Picks up the control signal from your radio.</td>
+              <td>ExpressLRS 2.4 GHz</td>
+            </tr>
+            <tr>
+              <td>FPV camera</td>
+              <td>The camera you actually fly with. Low latency matters more than resolution.</td>
+              <td>Matches your video system</td>
+            </tr>
+            <tr>
+              <td>Propellers</td>
+              <td>Size &times; pitch &times; blades. Cheap, and replaced often!</td>
+              <td>5.1 &times; 3.6 tri-blade</td>
+            </tr>
+            <tr>
+              <td>Battery</td>
+              <td>Lithium polymer pack. &ldquo;S&rdquo; is the number of cells in series (3.7V each).</td>
+              <td>6S, 1100&ndash;1300 mAh LiPo</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h3>The math</h3>
+          <!--
+            MDN ELEMENT #2: <var> (Variable)
+            What it is:  Marks the name of a variable in a math expression or
+                         in programming. Browsers show it in italics by default.
+            Where:       In each of the three formulas in this section, and in
+                         the paragraphs that explain them.
+            How I use it: Each letter in a drone formula (KV, V, C, I, T, W) is
+                         wrapped in <var> so it's clear it stands for a value
+                         you plug in. In styles.css I also made <var> bold and
+                         brown so the variables stand out.
+          -->
+          <p>Motor speed:</p>
+          <p class="formula">RPM = <var>KV</var> &times; <var>V</var></p>
+          <p>
+            <var>KV</var> is how many RPM the motor spins per volt (with no
+            load), and <var>V</var> is the battery voltage. A 1950KV motor on a
+            6S pack (22.2V) spins up to about <b>43,290 RPM</b>.
+          </p>
+          <p>Flight time:</p>
+          <p class="formula">minutes &asymp; (<var>C</var> &times; 0.8 &times; 60) &divide; <var>I</var></p>
+          <p>
+            <var>C</var> is battery capacity in amp-hours and <var>I</var> is
+            the average current draw in amps. The 0.8 means we only use 80% of
+            the pack so the LiPo isn&rsquo;t damaged. A 1.3 Ah battery at 20 A
+            average gives about <b>3 minutes</b>. FPV flights are short!
+          </p>
+          <p>Thrust-to-weight ratio:</p>
+          <p class="formula">TWR = <var>T</var> &divide; <var>W</var></p>
+          <p>
+            <var>T</var> is the total thrust of all four motors and
+            <var>W</var> is the all-up weight. Four motors making 1,500 g each
+            on a 650 g quad gives a TWR of about <b>9 : 1</b>, which is why
+            freestyle quads feel so punchy.
+          </p>
+        </section>
+        <section>
+          <h3>Build steps</h3>
+          <ol>
+            <li>Assemble the frame and mount the motors to the arms.</li>
+            <li>Mount the ESC and flight controller stack on soft rubber grommets.</li>
+            <li>Solder the motor wires and battery lead to the ESC.</li>
+            <li>Connect the receiver, VTX, and camera to the flight controller.</li>
+            <li>Use a <b>smoke stopper</b> the first time you plug in a battery, so a short circuit doesn&rsquo;t fry anything.</li>
+            <li>Flash and configure Betaflight (see <a href="fly.html" title="Learning to fly">Learning to fly</a>).</li>
+            <li>Install the props last, and only when you&rsquo;re ready to fly.</li>
+          </ol>
+        </section>
+        <section>
+          <h3>Resources</h3>
+          <!-- <wbr> is used after the slashes and dots in these long URLs so
+               they can wrap cleanly instead of running off the page. -->
+          <ul>
+            <li>
+              Betaflight docs:
+              <a href="https://betaflight.com/docs/wiki" title="Betaflight wiki" target="_blank">https://<wbr />betaflight.com/<wbr />docs/<wbr />wiki</a>
+            </li>
+            <li>
+              ExpressLRS quick start:
+              <a href="https://www.expresslrs.org/quick-start/getting-started/" title="ExpressLRS getting started" target="_blank">https://<wbr />www.expresslrs.org/<wbr />quick-start/<wbr />getting-started/</a>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer role="contentinfo">
+      <p>&copy; 2026 Alex Hossepian &middot; COMP 484 Project 1 &middot;</p>
+    </footer>
+  </body>
+</html>

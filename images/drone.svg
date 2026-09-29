@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Top-down view of a quadcopter">
+  <g stroke="#2ee67a" stroke-width="3" fill="none">
+    <circle cx="45" cy="45" r="32" fill="#2ee67a" fill-opacity="0.12"/>
+    <circle cx="155" cy="45" r="32" fill="#2ee67a" fill-opacity="0.12"/>
+    <circle cx="45" cy="155" r="32" fill="#1a4b9c" fill-opacity="0.12" stroke="#1a4b9c"/>
+    <circle cx="155" cy="155" r="32" fill="#1a4b9c" fill-opacity="0.12" stroke="#1a4b9c"/>
+  </g>
+  <g stroke="#0b1d3a" stroke-width="12" stroke-linecap="round">
+    <line x1="45" y1="45" x2="155" y2="155"/>
+    <line x1="155" y1="45" x2="45" y2="155"/>
+  </g>
+  <g fill="#e8e8ee" stroke="#0b1d3a" stroke-width="3">
+    <circle cx="45" cy="45" r="10"/>
+    <circle cx="155" cy="45" r="10"/>
+    <circle cx="45" cy="155" r="10"/>
+    <circle cx="155" cy="155" r="10"/>
+  </g>
+  <rect x="75" y="70" width="50" height="60" rx="10" fill="#ffffff" stroke="#0b1d3a" stroke-width="3"/>
+  <circle cx="100" cy="82" r="7" fill="#2ee67a"/>
+</svg>

@@ -6,26 +6,24 @@
     <!--
       MDN ATTRIBUTE #1: integrity
       What it is:  The "integrity" attribute (Subresource Integrity) holds a
-                   cryptographic hash (here SHA-384) of a file loaded from
-                   another server. The browser downloads the file, hashes it,
-                   and only uses it if the hash matches. If the CDN is hacked
-                   or the file is changed, the browser refuses to load it.
-      Where:       On this <link> tag in the <head> of every page.
-      How I use it: I load the "Orbitron" font from the jsDelivr CDN. The integrity hash makes sure I
-                   get exactly the file I tested with. crossorigin="anonymous"
-                   is required so the browser is allowed to check the hash of a
-                   file that comes from another domain. Used the help of stackoverflow to 
-                   understand how to use it. And used AI to help troubleshoot the error I was getting.
-                   Turns out I was using the wrong hash.
+                   cryptographic hash (here SHA-384) of a file the page loads.
+                   The browser downloads the file, hashes it, and only uses it
+                   if the hash matches. If the file was changed or tampered
+                   with, the browser refuses to load it.
+      Where:       On the <link> to css/styles.css in the <head> of every page.
+      How I use it: The hash makes sure the stylesheet is exactly the version
+                   I tested with. Because of this, every time I edit
+                   styles.css I have to recompute the hash and update it on
+                   all 4 pages. Used the help of stackoverflow to understand
+                   how to use it. And used AI to help troubleshoot the error I
+                   was getting. Turns out I was using the wrong hash.
     -->
     <link
-      href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.3.0/700.css"
+      href="css/styles.css"
       rel="stylesheet"
       type="text/css"
-      integrity="sha384-HsS2+TrIBHQPE8E40wfPfRiycjxUNJHrrvf8UEwY9AyHzpTl66tRn8tvirBLRNUb"
-      crossorigin="anonymous"
+      integrity="sha384-lOPFjr7iCPUpslqgIrfw0adeCraX8C4eoJx3yqr9ccgahayLKOSqQN1DSgWeHpWj"
     />
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <header role="banner">

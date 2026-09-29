@@ -1,5 +1,8 @@
-/* FPV Drones - main stylesheet (used by every page)
-   Colors: navy #0b1d3a (primary), neon green #39ff88 (secondary) */
+/* Colors: navy #0b1d3a (primary), neon green #39ff88 (secondary)
+   Every page links this file with an integrity hash. After ANY
+   change to this file, the hash must be recomputed and updated in all
+   4 HTML files, or the browser will refuse to load it. I ran into too many
+   issues cause I didnt realize this lol*/
 
 html, body {
 	background: #0b1d3a; /* navy */
@@ -22,10 +25,9 @@ body {
 	background: white;
 	line-height: 1.8;
 }
-/* Site name. Orbitron is loaded from a CDN in each page's <head>
-   (see the integrity attribute there). Falls back to Verdana. */
+/* Site name */
 h1 {
-	font: 1.6em "Orbitron", Verdana, Geneva, sans-serif;
+	font: bold 1.6em Verdana, Geneva, sans-serif;
 	margin-bottom: .4em;
 	color: #0b1d3a;
 	letter-spacing: 2px;
